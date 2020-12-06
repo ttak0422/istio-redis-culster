@@ -1,16 +1,10 @@
 This tutorial shows how to use Istio to enable Envoy Redis Cluster support, including data sharding, read/write splitting, and traffic mirroring, all the magics are done by Istio and Envoy proxy, without any awareness at the client side.
 
-# Deploy Istio 
-
-If you're using a newer Istio version where the following PR has already been incorporated, you can just follow the Istio install guide and you're good to go.
-
-Implement REPLACE operation for EnvoyFilter patch  https://github.com/istio/istio/pull/27426/
-
-At the time of writing, the latest Istio version is 1.7.3, in which the EnvoyFilter REPLACE operation is not supported yet, so I build a customized pilot image to enable it. We need to use zhaohuabing/pilot:1.7.3-enable-ef-replace instead of the default pilot image to make this demo work.
+# Deploy Istio
 
 ```bash
-$ cd istio-1.7.3/bin
-$ ./istioctl install --set components.pilot.hub=zhaohuabing --set components.pilot.tag=1.7.3-enable-ef-replace
+$ cd istio-1.8.0/bin/
+$ ./istioctl install
 ```
 
 # Deploy Redis Cluster
