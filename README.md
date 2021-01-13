@@ -136,12 +136,6 @@ $ kubectl apply -f istio/envoyfilter-custom-redis-cluster.yaml
 envoyfilter.networking.istio.io/custom-redis-cluster created
 ```
 
-## Update EnvoyFilter CRD to enable REPLACE operation
-
-```bash
-$ kubectl apply -f istio/envoyfilter-crd.yaml 
-customresourcedefinition.apiextensions.k8s.io/envoyfilters.networking.istio.io configured
-```
 
 ## Apply the EnvoyFilter to replace the default tcp proxy with our redis proxy
 
